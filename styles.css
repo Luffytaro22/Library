@@ -12,7 +12,9 @@ body {
 
 main {
   padding: 20px 20px;
-  background-color: color(a98-rgb 0.22 0.15 0.1 / 0.87);
+  background: linear-gradient(color(a98-rgb 0.22 0.15 0.1 / 0.87), color(a98-rgb 0.22 0.15 0.1 / 0.87)), url("./Images/libro-biblioteca-libro-texto-abierto.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 main h1 {
