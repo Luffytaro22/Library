@@ -176,7 +176,7 @@ button:active {
 @media only screen and (min-width: 600px) {
   #books {
     grid-template-columns: 1fr 1fr;
-  } 
+  }
 }
 
 @media only screen and (min-width: 1024px) {

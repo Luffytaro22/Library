@@ -112,8 +112,8 @@ function addBook(event) {
   const vali3 = bookPages.validity.valueMising;
 
   if (!vali1 && !vali2 && !vali3) {
-      /* Prevents the form to be submitted */
-      event.preventDefault();
+    /* Prevents the form to be submitted */
+    event.preventDefault();
   } else {
     return;
   }
