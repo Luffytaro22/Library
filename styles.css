@@ -43,6 +43,13 @@ button:hover {
   box-shadow: 0 0 10px goldenrod;
 }
 
+/* When the button is clicked */
+button:active {
+  transition: none;
+  background-color: rgba(56, 38, 26, 1);
+  transform: translateY(3px);
+}
+
 .blur-effect {
   filter: blur(5px);
 }
