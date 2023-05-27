@@ -28,7 +28,7 @@ main > h2 {
 
 button {
   background-color: rgba(56, 38, 26, 1);
-  border: 1px solid antiquewhite;
+  border: 1px solid saddlebrown;
   padding: 10px 20px;
   border-radius: 5px 5px 5px 0;
   font-family: Tsukimi Rounded, sans-serif;
@@ -39,12 +39,24 @@ button {
   filter: blur(5px);
 }
 
+.readed {
+  background-color: goldenrod;
+}
+
+.not-readed {
+  background-color: rgb(116, 55, 55);
+}
+
+.remove-buttons {
+  background-color: rgb(245, 109, 92);
+}
+
 #book-container {
   display: none;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  border: 1px solid antiquewhite;
+  border: 3px solid saddlebrown;
   position: fixed;
   left: 10%;
   z-index: 999;
@@ -87,22 +99,15 @@ button {
 .inputs input {
   padding: 10px 10px;
   border-radius: 5px;
-  border: 1px solid pink;
+  border: 1px solid saddlebrown;
   background-color: transparent;
   width: 90%;
   color: antiquewhite;
 }
 
 .inputs input:focus {
-  outline-color: rgb(0, 0, 61);
-}
-
-.inputs input:invalid {
-  outline-color: crimson;
-}
-
-.inputs input:valid {
-  outline-color: green;
+  outline: none;
+  box-shadow: 0 0 10px black;
 }
 
 #books {
@@ -117,12 +122,12 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1px solid antiquewhite;
+  border: 3px solid saddlebrown;
   border-radius: 10px;
   padding: 10px 10px;
 }
 
 .books p {
-  border-bottom: 1px solid antiquewhite;
+  border-bottom: 1px solid saddlebrown;
   padding: 10px 0;
 }
