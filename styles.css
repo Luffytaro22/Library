@@ -1,4 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Tsukimi+Rounded:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
+
+body {
+  text-align: center;
+  font-family: Tsukimi Rounded, sans-serif;
+}
+
+button {
+  background-color: skyblue;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px 5px 5px 0;
+  font-family: Tsukimi Rounded, sans-serif;
+}
+
+#book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid black;
+  position: fixed;
+  left: 10%;
+  z-index: 999;
+  background-color: white;
+  width: 80%;
+  padding: 20px 0;
+  border-radius: 10px;
+  display: none;
+}
+
+#checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#read {
+  transform: scale(1.4);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputs input {
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid pink;
+  background-color: blanchedalmond;
+}
+
+.inputs input:focus {
+  outline-color: rgb(0, 0, 61);
+}
+
+.inputs input:invalid {
+  outline-color: crimson;
+}
+
+.inputs input:valid {
+  outline-color: green;
+}
+
+
