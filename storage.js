@@ -93,8 +93,10 @@ function addBook(event) {
     localStorage.setItem('library', JSON.stringify(myLibrary));
   }
 
-  /* Prevents the form to be submitted */
-  event.preventDefault();
+  if (!bookTitle.validity.valueMissing && !bookAuthor.validity.valueMissing && !bookPages.validity.valueMising) {
+    /* Prevents the form to be submitted */
+    event.preventDefault();
+  }
   form.reset(); 
   displayBook(book);
 }
@@ -115,6 +117,8 @@ displayBooks();
 
 /* A click listener to the submit button */
 submitButton.addEventListener('click', addBook);
+
+/* A click listener to the read button */
 bookRead.addEventListener('click', () => {
   if (bookRead.checked) {
     bookRead.value = 'on';
