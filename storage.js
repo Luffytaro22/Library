@@ -62,7 +62,7 @@ function generateBooks(book) {
       div.remove();
 
       /* Split the array and join both parts */
-      let index = pRemove.tabIndex;
+      const index = pRemove.tabIndex;
       myLibrary = [...myLibrary.slice(0, index), ...myLibrary.slice(index + 1)];
       localStorage.setItem('library', JSON.stringify(myLibrary));
     }
