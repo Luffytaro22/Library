@@ -13,25 +13,27 @@
 <body>
   <main>
     <h1>Welcome to your personal Library!</h1>
-    <form id="book-container">
-      <div class="inputs">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="book-title" required>
-      </div>
-      <div class="inputs">
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="book-author" required>
-      </div>
-      <div class="inputs">
-        <label for="pages">Pages:</label>
-        <input type="number" id="pages" name="book-pages" required>
-      </div>
-      <div id="checkbox-container">
-        <label for="read">Read:</label>
-            <input type="checkbox" id="read" name="book-read" value="off">
-      </div>
-      <button type="submit" id="submit-button">Add Book</button>
-    </form>
+    <div id="form-container">
+      <form id="book-container">
+        <div class="inputs">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="book-title" required>
+        </div>
+        <div class="inputs">
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="book-author" required>
+        </div>
+        <div class="inputs">
+          <label for="pages">Pages:</label>
+          <input type="number" id="pages" name="book-pages" required>
+        </div>
+        <div id="checkbox-container">
+          <label for="read">Read:</label>
+              <input type="checkbox" id="read" name="book-read" value="off">
+        </div>
+        <button type="submit" id="submit-button">Add Book</button>
+      </form>
+    </div>
     <button type="button" id="add-book"><i class="fa-solid fa-plus"></i> Add Book</button>
     <h2>Here you can see the added books!</h2>
     <div id="books">
