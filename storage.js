@@ -33,6 +33,7 @@ function generateBooks(book) {
 
   /* Add classes */
   div.classList.add('books');
+  pRemove.classList.add('remove-buttons');
   pRemove.name = book.title;
   pRemove.tabIndex = myLibrary.indexOf(book);
 
@@ -44,8 +45,10 @@ function generateBooks(book) {
 
   if (book.read === 'on') {
     pRead.textContent = 'Readed';
+    pRead.classList.add('readed');
   } else {
     pRead.textContent = 'Not readed';
+    pRead.classList.add('not-readed');
   }
 
   /* Append elements */
@@ -73,10 +76,14 @@ function generateBooks(book) {
     if (book.read === 'on') {
       book.read = 'off';
       pRead.textContent = 'Not Readed';
+      pRead.classList.remove('readed');
+      pRead.classList.add('not-readed');
       localStorage.setItem('library', JSON.stringify(myLibrary));
     } else {
       book.read = 'on';
       pRead.textContent = 'Readed';
+      pRead.classList.remove('not-readed');
+      pRead.classList.add('readed');
       localStorage.setItem('library', JSON.stringify(myLibrary));
     }
   });

@@ -1,4 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Tsukimi+Rounded:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  text-align: center;
+  font-family: Tsukimi Rounded, sans-serif;
+}
+
+main {
+  padding: 20px 20px;
+  background: linear-gradient(rgba(56, 38, 26, 0.8), rgba(56, 38, 26, 0.8)), url("./Images/libro-biblioteca-libro-texto-abierto.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: antiquewhite;
+}
+
+main h1 {
+  padding-bottom: 20px;
+}
+
+main > h2 {
+  padding-top: 20px;
+}
+
+button {
+  background-color: rgba(56, 38, 26, 1);
+  border: 1px solid saddlebrown;
+  padding: 10px 20px;
+  border-radius: 5px 5px 5px 0;
+  font-family: Tsukimi Rounded, sans-serif;
+  color: antiquewhite;
+  transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+  border: 1px solid rgba(56, 38, 26, 1);
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: 0 0 10px goldenrod;
+}
+
+/* When the button is clicked */
+button:active {
+  transition: none;
+  background-color: rgba(56, 38, 26, 1);
+  transform: translateY(3px);
+}
+
+.blur-effect {
+  filter: blur(5px);
+}
+
+.readed {
+  background-color: goldenrod;
+}
+
+.readed:hover {
+  border: 1px solid goldenrod;
+}
+
+.not-readed {
+  background-color: rgb(116, 55, 55);
+}
+
+.not-readed:hover {
+  border: 1px solid rgb(116, 55, 55);
+}
+
+.remove-buttons {
+  background-color: rgb(245, 109, 92);
+}
+
+.remove-buttons:hover {
+  border: 1px solid rgb(245, 109, 92);
+}
+
+#book-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 3px solid saddlebrown;
+  position: fixed;
+  left: 10%;
+  z-index: 999;
+  background-color: rgba(56, 38, 26, 0.8);
+  width: 80%;
+  padding: 20px 0;
+  border-radius: 10px;
+  animation-name: pop-up;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1, -0.37, 0.02, 1.59);
+}
+
+@keyframes pop-up {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+#checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#read {
+  transform: scale(1.4);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+}
+
+.inputs input {
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid saddlebrown;
+  background-color: transparent;
+  width: 90%;
+  color: antiquewhite;
+}
+
+.inputs input:focus {
+  outline: none;
+  box-shadow: 0 0 10px black;
+}
+
+#books {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 20px 20px;
+}
+
+.books {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 3px solid saddlebrown;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.books p {
+  border-bottom: 1px solid saddlebrown;
+  padding: 10px 0;
 }
