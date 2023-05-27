@@ -41,8 +41,8 @@ function generateBooks(book) {
   pAuthor.textContent = book.author;
   pPages.textContent = book.pages;
   pRemove.textContent = 'REMOVE';
-  
-  if (book.read == 'on') {
+
+  if (book.read === 'on') {
     pRead.textContent = 'Readed';
   } else {
     pRead.textContent = 'Not readed';
@@ -62,14 +62,14 @@ function generateBooks(book) {
       div.remove();
 
       /* Split the array and join both parts */
-      myLibrary = [...myLibrary.slice(0, pRemove.tabIndex), ...myLibrary.slice(pRemove.tabIndex+1)];
+      myLibrary = [...myLibrary.slice(0, pRemove.tabIndex), ...myLibrary.slice(pRemove.tabIndex + 1)];
       localStorage.setItem('library', JSON.stringify(myLibrary));
     }
   });
 
   /* A listener to the Read button */
   pRead.addEventListener('click', () => {
-    if (book.read == 'on') {
+    if (book.read === 'on') {
       book.read = 'off';
       pRead.textContent = 'Not Readed';
       localStorage.setItem('library', JSON.stringify(myLibrary));
@@ -79,29 +79,6 @@ function generateBooks(book) {
       localStorage.setItem('library', JSON.stringify(myLibrary));
     }
   });
-}
-
-/* Function that adds books to the array */
-function addBook(event) {
-  let book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
-
-  if (!bookTitle.validity.valueMissing && !bookAuthor.validity.valueMissing && !bookPages.validity.valueMising) {
-    /* Prevents the form to be submitted */
-    event.preventDefault();
-  } else {
-    return;
-  }
-
-  if (localStorage.getItem('library')) {
-    /* Adds the new book */
-    myLibrary.push(book);
-    localStorage.setItem('library', JSON.stringify(myLibrary));
-  } else {
-    localStorage.setItem('library', JSON.stringify(myLibrary));
-  }
-
-  form.reset(); 
-  displayBook(book);
 }
 
 /* function that displays only the new books added */
@@ -117,6 +94,31 @@ function displayBooks() {
   });
 }
 displayBooks();
+
+/* Function that adds books to the array */
+function addBook(event) {
+  const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
+
+  if (!bookTitle.validity.valueMissing && !bookAuthor.validity.valueMissing) {
+    if (!bookPages.validity.valueMising) {
+      /* Prevents the form to be submitted */
+      event.preventDefault();
+    }
+  } else {
+    return;
+  }
+
+  if (localStorage.getItem('library')) {
+    /* Adds the new book */
+    myLibrary.push(book);
+    localStorage.setItem('library', JSON.stringify(myLibrary));
+  } else {
+    localStorage.setItem('library', JSON.stringify(myLibrary));
+  }
+
+  form.reset();
+  displayBook(book);
+}
 
 /* A click listener to the submit button */
 submitButton.addEventListener('click', addBook);
