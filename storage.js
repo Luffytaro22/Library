@@ -41,7 +41,7 @@ function generateBooks(book) {
   pTitle.textContent = book.title;
   pAuthor.textContent = book.author;
   pPages.textContent = book.pages;
-  pRemove.textContent = 'REMOVE';
+  pRemove.textContent = 'Remove';
 
   if (book.read === 'on') {
     pRead.textContent = 'Readed';
@@ -107,11 +107,13 @@ displayBooks();
 function addBook(event) {
   const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
 
-  if (!bookTitle.validity.valueMissing && !bookAuthor.validity.valueMissing) {
-    if (!bookPages.validity.valueMising) {
-      /* Prevents the form to be submitted */
-      event.preventDefault();
-    }
+  const vali1 = bookTitle.validity.valueMissing;
+  const vali2 = bookAuthor.validity.valueMissing;
+  const vali3 = bookPages.validity.valueMising;
+
+  if (!vali1 && !vali2 && !vali3) {
+    /* Prevents the form to be submitted */
+    event.preventDefault();
   } else {
     return;
   }
