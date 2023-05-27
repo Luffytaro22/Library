@@ -68,10 +68,14 @@ function generateBooks(book) {
 
   /* A listener to the Read button */
   pRead.addEventListener('click', () => {
-    if (pRead.textContent === 'Not readed') {
-      pRead.textContent = 'Readed';
+    if (book.read == 'on') {
+      book.read = 'off';
+      pRead.textContent = 'Not Readed';
+      localStorage.setItem('library', JSON.stringify(myLibrary));
     } else {
-      pRead.textContent = 'Not readed';
+      book.read = 'on';
+      pRead.textContent = 'Readed';
+      localStorage.setItem('library', JSON.stringify(myLibrary));
     }
   });
 }
