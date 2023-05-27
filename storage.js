@@ -33,6 +33,7 @@ function generateBooks(book) {
 
   /* Add classes */
   div.classList.add('books');
+  pRemove.classList.add('remove-buttons');
   pRemove.name = book.title;
   pRemove.tabIndex = myLibrary.indexOf(book);
 
