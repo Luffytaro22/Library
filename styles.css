@@ -78,15 +78,22 @@ button:active {
   border: 1px solid rgb(245, 109, 92);
 }
 
+#form-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+  width: 100%;
+  left: 0;
+  top: 5%;
+}
+
 #book-container {
   display: none;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   border: 3px solid saddlebrown;
-  position: fixed;
-  left: 10%;
-  z-index: 999;
   background-color: rgba(56, 38, 26, 0.8);
   width: 80%;
   padding: 20px 0;
@@ -159,20 +166,32 @@ button:active {
   padding: 10px 0;
 }
 
+@media only screen and (min-width: 425px) {
+  #book-container {
+    width: 340px;
+  }
+}
+
 @media only screen and (min-width: 600px) {
   #books {
     grid-template-columns: 1fr 1fr;
   }
+
+  
 }
 
 @media only screen and (min-width: 1024px) {
   #books {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  
 }
 
 @media only screen and (min-width: 1440px) {
   #books {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+
+  
 }
