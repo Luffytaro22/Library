@@ -99,3 +99,10 @@ displayBooks();
 
 /* A click listener to the submit button */
 submitButton.addEventListener('click', addBook);
+bookRead.addEventListener('click', () => {
+  if (bookRead.checked) {
+    bookRead.value = 'on';
+  } else {
+    bookRead.value = 'off';
+  }
+});
