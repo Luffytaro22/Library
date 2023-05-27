@@ -33,6 +33,14 @@ button {
   border-radius: 5px 5px 5px 0;
   font-family: Tsukimi Rounded, sans-serif;
   color: antiquewhite;
+  transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+  border: 1px solid rgba(56, 38, 26, 1);
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: 0 0 10px goldenrod;
 }
 
 .blur-effect {
@@ -43,12 +51,24 @@ button {
   background-color: goldenrod;
 }
 
+.readed:hover {
+  border: 1px solid goldenrod;
+}
+
 .not-readed {
   background-color: rgb(116, 55, 55);
 }
 
+.not-readed:hover {
+  border: 1px solid rgb(116, 55, 55);
+}
+
 .remove-buttons {
   background-color: rgb(245, 109, 92);
+}
+
+.remove-buttons:hover {
+  border: 1px solid rgb(245, 109, 92);
 }
 
 #book-container {
