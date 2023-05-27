@@ -85,6 +85,13 @@ function generateBooks(book) {
 function addBook(event) {
   let book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
 
+  if (!bookTitle.validity.valueMissing && !bookAuthor.validity.valueMissing && !bookPages.validity.valueMising) {
+    /* Prevents the form to be submitted */
+    event.preventDefault();
+  } else {
+    return;
+  }
+
   if (localStorage.getItem('library')) {
     /* Adds the new book */
     myLibrary.push(book);
@@ -93,10 +100,6 @@ function addBook(event) {
     localStorage.setItem('library', JSON.stringify(myLibrary));
   }
 
-  if (!bookTitle.validity.valueMissing && !bookAuthor.validity.valueMissing && !bookPages.validity.valueMising) {
-    /* Prevents the form to be submitted */
-    event.preventDefault();
-  }
   form.reset(); 
   displayBook(book);
 }
