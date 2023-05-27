@@ -4,6 +4,7 @@ const bookPages = document.querySelector('#pages');
 const bookRead = document.querySelector('#read');
 const submitButton = document.querySelector('#submit-button');
 const booksContainer = document.querySelector('#books');
+const form = document.querySelector('#book-container');
 
 let myLibrary = [];
 
@@ -94,6 +95,7 @@ function addBook(event) {
 
   /* Prevents the form to be submitted */
   event.preventDefault();
+  form.reset(); 
   displayBook(book);
 }
 
