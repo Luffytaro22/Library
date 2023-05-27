@@ -18,6 +18,10 @@ button {
   font-family: Tsukimi Rounded, sans-serif;
 }
 
+.blur-effect {
+  filter: blur(5px);
+}
+
 #book-container {
   display: none;
   flex-direction: column;
