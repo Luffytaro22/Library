@@ -16,6 +16,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   color: antiquewhite;
+  min-height: 100vh;
 }
 
 main h1 {
