@@ -176,23 +176,17 @@ button:active {
 @media only screen and (min-width: 600px) {
   #books {
     grid-template-columns: 1fr 1fr;
-  }
-
-  
+  } 
 }
 
 @media only screen and (min-width: 1024px) {
   #books {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 300px);
   }
-
-  
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1300px) {
   #books {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 300px);
   }
-
-  
 }

@@ -41,7 +41,7 @@ function generateBooks(book) {
   pTitle.textContent = book.title;
   pAuthor.textContent = book.author;
   pPages.textContent = book.pages;
-  pRemove.textContent = 'REMOVE';
+  pRemove.textContent = 'Remove';
 
   if (book.read === 'on') {
     pRead.textContent = 'Readed';
