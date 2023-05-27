@@ -27,7 +27,7 @@ function generateBooks(book) {
   const pTitle = document.createElement('p');
   const pAuthor = document.createElement('p');
   const pPages = document.createElement('p');
-  const pRead = document.createElement('p');
+  const pRead = document.createElement('button');
   const pRemove = document.createElement('button');
 
   /* Add classes */
@@ -55,6 +55,7 @@ function generateBooks(book) {
   div.appendChild(pRemove);
   booksContainer.appendChild(div);
 
+  /* A listener to the Remove button */
   pRemove.addEventListener('click', () => {
     if (pRemove.name === book.title) {
       div.remove();
@@ -62,6 +63,15 @@ function generateBooks(book) {
       /* Split the array and join both parts */
       myLibrary = [...myLibrary.slice(0, pRemove.tabIndex), ...myLibrary.slice(pRemove.tabIndex+1)];
       localStorage.setItem('library', JSON.stringify(myLibrary));
+    }
+  });
+
+  /* A listener to the Read button */
+  pRead.addEventListener('click', () => {
+    if (pRead.textContent === 'Not readed') {
+      pRead.textContent = 'Readed';
+    } else {
+      pRead.textContent = 'Not readed';
     }
   });
 }
