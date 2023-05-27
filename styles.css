@@ -19,7 +19,7 @@ button {
 }
 
 #book-container {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 10px;
@@ -31,7 +31,19 @@ button {
   width: 80%;
   padding: 20px 0;
   border-radius: 10px;
-  display: none;
+  animation-name: pop-up;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1, -0.37, 0.02, 1.59);
+}
+
+@keyframes pop-up {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 #checkbox-container {
