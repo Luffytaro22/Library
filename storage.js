@@ -62,7 +62,8 @@ function generateBooks(book) {
       div.remove();
 
       /* Split the array and join both parts */
-      myLibrary = [...myLibrary.slice(0, pRemove.tabIndex), ...myLibrary.slice(pRemove.tabIndex + 1)];
+      let index = pRemove.tabIndex;
+      myLibrary = [...myLibrary.slice(0, index), ...myLibrary.slice(index + 1)];
       localStorage.setItem('library', JSON.stringify(myLibrary));
     }
   });
