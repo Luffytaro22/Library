@@ -45,7 +45,7 @@ function generateBooks(book) {
 
   if (book.read === 'on') {
     pRead.textContent = 'Readed';
-    pRead.classList.add('readed')
+    pRead.classList.add('readed');
   } else {
     pRead.textContent = 'Not readed';
     pRead.classList.add('not-readed');
