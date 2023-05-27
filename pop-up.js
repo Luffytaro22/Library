@@ -2,7 +2,7 @@ const buttonBook = document.querySelector('#add-book');
 const formContainer = document.querySelector('#book-container');
 
 /* All the elements in main that are not the form */
-const blurElements = document.querySelectorAll('main > *:not(#book-container)');
+const blurElements = document.querySelectorAll('main > *:not(#form-container)');
 
 /* Shows the form */
 function showForm() {
