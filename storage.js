@@ -33,6 +33,7 @@ function generateBooks(book) {
   /* Add classes */
   div.classList.add('books');
   pRemove.name = book.title;
+  pRemove.tabIndex = myLibrary.indexOf(book);
 
   /* Add the text */
   pTitle.textContent = book.title;
@@ -57,6 +58,10 @@ function generateBooks(book) {
   pRemove.addEventListener('click', () => {
     if (pRemove.name === book.title) {
       div.remove();
+
+      /* Split the array and join both parts */
+      myLibrary = [...myLibrary.slice(0, pRemove.tabIndex), ...myLibrary.slice(pRemove.tabIndex+1)];
+      localStorage.setItem('library', JSON.stringify(myLibrary));
     }
   });
 }
