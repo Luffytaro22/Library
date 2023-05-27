@@ -10,6 +10,19 @@ body {
   font-family: Tsukimi Rounded, sans-serif;
 }
 
+main {
+  padding: 20px 20px;
+  background-color: color(a98-rgb 0.22 0.15 0.1 / 0.87);
+}
+
+main h1 {
+  padding-bottom: 20px;
+}
+
+main > h2 {
+  padding-top: 20px;
+}
+
 button {
   background-color: skyblue;
   border: none;
@@ -85,4 +98,24 @@ button {
   outline-color: green;
 }
 
+#books {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  padding: 20px 20px;
+}
 
+.books {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.books p {
+  border-bottom: 1px solid blue;
+  padding: 10px 0;
+}
