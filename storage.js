@@ -107,11 +107,13 @@ displayBooks();
 function addBook(event) {
   const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
 
-  if (!bookTitle.validity.valueMissing && !bookAuthor.validity.valueMissing) {
-    if (!bookPages.validity.valueMising) {
+  const vali1 = bookTitle.validity.valueMissing;
+  const vali2 = bookAuthor.validity.valueMissing;
+  const vali3 = bookPages.validity.valueMising;
+
+  if (!vali1 && !vali2 && !vali3) {
       /* Prevents the form to be submitted */
       event.preventDefault();
-    }
   } else {
     return;
   }
