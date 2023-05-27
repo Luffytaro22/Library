@@ -12,9 +12,10 @@ body {
 
 main {
   padding: 20px 20px;
-  background: linear-gradient(color(a98-rgb 0.22 0.15 0.1 / 0.87), color(a98-rgb 0.22 0.15 0.1 / 0.87)), url("./Images/libro-biblioteca-libro-texto-abierto.jpg");
+  background: linear-gradient(rgba(56, 38, 26, 0.8), rgba(56, 38, 26, 0.8)), url("./Images/libro-biblioteca-libro-texto-abierto.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  color: antiquewhite;
 }
 
 main h1 {
@@ -26,11 +27,12 @@ main > h2 {
 }
 
 button {
-  background-color: skyblue;
-  border: none;
+  background-color: rgba(56, 38, 26, 1);
+  border: 1px solid antiquewhite;
   padding: 10px 20px;
   border-radius: 5px 5px 5px 0;
   font-family: Tsukimi Rounded, sans-serif;
+  color: antiquewhite;
 }
 
 .blur-effect {
@@ -41,12 +43,12 @@ button {
   display: none;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  border: 1px solid black;
+  gap: 20px;
+  border: 1px solid antiquewhite;
   position: fixed;
   left: 10%;
   z-index: 999;
-  background-color: white;
+  background-color: rgba(56, 38, 26, 0.8);
   width: 80%;
   padding: 20px 0;
   border-radius: 10px;
@@ -79,13 +81,16 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 90%;
 }
 
 .inputs input {
   padding: 10px 10px;
   border-radius: 5px;
   border: 1px solid pink;
-  background-color: blanchedalmond;
+  background-color: transparent;
+  width: 90%;
+  color: antiquewhite;
 }
 
 .inputs input:focus {
@@ -112,12 +117,12 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1px solid black;
+  border: 1px solid antiquewhite;
   border-radius: 10px;
   padding: 10px 10px;
 }
 
 .books p {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid antiquewhite;
   padding: 10px 0;
 }
