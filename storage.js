@@ -35,7 +35,9 @@ function generateBooks(book) {
   div.classList.add('books');
   pRemove.classList.add('remove-buttons');
   pRemove.name = book.title;
-  pRemove.tabIndex = myLibrary.indexOf(book);
+  const tit = book.title;
+  const aut = book.author;
+  pRemove.tabIndex = myLibrary.findIndex((obj) => obj.title === tit && obj.author === aut);
 
   /* Add the text */
   pTitle.textContent = book.title;
@@ -61,14 +63,13 @@ function generateBooks(book) {
 
   /* A listener to the Remove button */
   pRemove.addEventListener('click', () => {
-    if (pRemove.name === book.title) {
-      div.remove();
+    const index = pRemove.tabIndex;
+    div.remove();
 
-      /* Split the array and join both parts */
-      const index = pRemove.tabIndex;
-      myLibrary = [...myLibrary.slice(0, index), ...myLibrary.slice(index + 1)];
-      localStorage.setItem('library', JSON.stringify(myLibrary));
-    }
+    /* Split the array and join both parts */
+    myLibrary = [...myLibrary.slice(0, index), ...myLibrary.slice(index + 1)];
+    localStorage.setItem('library', JSON.stringify(myLibrary));
+    displayBooks();
   });
 
   /* A listener to the Read button */
@@ -96,6 +97,7 @@ function displayBook(book) {
 
 /* Function that displays the books added */
 function displayBooks() {
+  booksContainer.innerHTML = '';
   /* Loop throught the array */
   myLibrary.forEach((book) => {
     generateBooks(book);
